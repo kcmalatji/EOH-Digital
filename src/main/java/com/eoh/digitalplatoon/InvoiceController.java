@@ -61,7 +61,7 @@ public class InvoiceController {
         model.addAttribute("Invoices", Invoices);
         return Invoices;
     }
-    @RequestMapping("/invoices//{invoiceId}")
+    @RequestMapping("/invoices/{invoiceId}")
     public Invoice singleinvoice(@PathVariable("invoiceId") int id) throws Exception {
         if(Invoices.size()==0)
         {
@@ -72,6 +72,16 @@ public class InvoiceController {
         return Invoices.get(index);
     }
 
+    @RequestMapping("/invoices/{invoiceId}")
+    public Invoice addinvoice(@PathVariable("invoiceId") int id) throws Exception {
+        if(Invoices.size()==0)
+        {
+            readDataBase();
+        }
+        System.out.println( Invoices.size());
+        int index=id-1;
+        return Invoices.get(index);
+    }
 
 
 }
