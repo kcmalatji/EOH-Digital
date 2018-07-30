@@ -1,22 +1,42 @@
 package com.eoh.digitalplatoon;
+
+import java.util.Date;
+
 public class Invoice {
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getClient() {
+        return Client;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setClient(String client) {
+        Client = client;
     }
 
-    int id;
-    String name;
+    public Long getVatRate() {
+        return vatRate;
+    }
 
+    public void setVatRate(Long vatRate) {
+        this.vatRate = vatRate;
+    }
+
+    public Date getInvoiceDate() {
+        return invoiceDate;
+    }
+
+    public void setInvoiceDate(Date invoiceDate) {
+        this.invoiceDate = invoiceDate;
+    }
+
+    Long id;
+String Client;
+Long vatRate;
+Date invoiceDate;
 }
