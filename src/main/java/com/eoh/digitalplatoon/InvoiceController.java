@@ -61,8 +61,8 @@ public class InvoiceController {
         model.addAttribute("Invoices", Invoices);
         return Invoices;
     }
-    @RequestMapping("/invoices/{id}")
-    public Invoice singleinvoice(@PathVariable("id") int id) throws Exception {
+    @RequestMapping("/invoices//{invoiceId}")
+    public Invoice singleinvoice(@PathVariable("invoiceId") int id) throws Exception {
         if(Invoices.size()==0)
         {
             readDataBase();
